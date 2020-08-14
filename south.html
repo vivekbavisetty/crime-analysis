@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="stylesheet2.css">
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v4.js"></script>
+
+</head>
+
+
+
+<body>
+
+    <div class="header">
+        <a href="crime.html" class="logo">Crime Analysis</a>
+        <div class="header-right">
+            <a href="about.html">Help</a>
+            <a href="about.html">Settings</a>
+        </div>
+    </div>
+
+
+    <ul>
+        <li><a href="crime.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="about.html">Contact</a></li>
+        <li><a class="active" href="button.html">Case Studies</a></li>
+    </ul>
+    </br>
+    </br>
+
+
+    <marquee scrolldelay="20">www.Loopinfinity.com www.Loopinfinity.com</marquee>
+
+
+    <div id="main">
+        <h1>South states crime cases from 2001-2012</h1>
+        <!-- Add 2 buttons -->
+        <button id="b" onclick="update(data1)">Andhra Pradesh</button>
+        <button id="b" onclick="update(data2)">Tamilnadu</button>
+        <button id="b" onclick="update(data3)">Kerala</button>
+        <button id="b" onclick="update(data4)">Karnathaka</button>
+
+
+        <!-- Create a div where the graph will take place -->
+        <div id="my_dataviz"></div>
+
+
+
+        <script>
+            // create 2 data_set
+            var data1 = [{
+                group: "rapes",
+                value: 22948
+            }, {
+                group: "murders",
+                value: 46669
+            }, {
+                group: "robbery",
+                value: 478042
+
+            }, {
+                group: "kidnapping",
+                value: 35060
+            }, {
+                group: "Bulglary",
+                value: 81705
+            }, {
+                group: "Cheating",
+                value: 82831
+            }, {
+                group: "Dowry death",
+                value: 5159
+            }, {
+                group: "Dacoity",
+                value: 1637
+            }, {
+                group: "Riots",
+                value: 23435
+            }, {
+                group: "thefts",
+                value: 478042
+
+            }];
+
+            var data2 = [{
+                group: "rapes",
+                value: 12712
+            }, {
+                group: "murders",
+                value: 42940
+            }, {
+                group: "robbery",
+                value: 338896
+            }, {
+                group: "kidnapping",
+                value: 27862
+
+            }, {
+                group: "bulgary",
+                value: 49118
+            }, {
+                group: "dacoity",
+                value: 1413
+            }, {
+                group: "thefts",
+                value: 338896
+            }, {
+                group: "riots",
+                value: 34971
+            }, {
+                group: "dowry deaths",
+                value: 2123
+            }];
+
+            var data3 = [{
+                group: "rapes",
+                value: 14894
+            }, {
+                group: "murders",
+                value: 11957
+            }, {
+                group: "robbery",
+                value: 8329
+
+            }, {
+                group: "bulgary",
+                value: 46371
+            }, {
+                group: "dacoity",
+                value: 3143
+            }, {
+                group: "riots",
+                value: 96274
+            }, {
+                group: "thefts",
+                value: 124706
+            }, {
+                group: "dowry deaths",
+                value: 301
+            }, {
+                group: "cheating",
+                value: 43758
+
+            }];
+
+            var data4 = [{
+                group: "rapes",
+                value: 10348
+            }, {
+                group: "murders",
+                value: 39306
+            }, {
+                group: "robbery",
+                value: 399920
+            }, {
+                group: "kidnapping",
+                value: 20058
+            }, {
+                group: "bulgary",
+                value: 73298
+            }, {
+                group: "thefts",
+                value: 399920
+            }, {
+                group: "riots",
+                value: 78421
+            }, {
+                group: "cheating",
+                value: 46335
+            }, {
+                group: "dowry deaths",
+                value: 681338
+            }];
+
+
+            // set the dimensions and margins of the graph
+            var margin = {
+                    top: 30,
+                    right: 30,
+                    bottom: 70,
+                    left: 60
+                },
+                width = 600 - margin.left - margin.right,
+                height = 500 - margin.top - margin.bottom;
+
+            // append the svg object to the body of the page
+            var svg = d3.select("#my_dataviz")
+                .append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform",
+                    "translate(" + margin.left + "," + margin.top + ")");
+
+            // Initialize the X axis
+            var x = d3.scaleBand()
+                .range([0, width])
+                .padding(0.2);
+            var xAxis = svg.append("g")
+                .attr("transform", "translate(0," + height + ")")
+
+            // Initialize the Y axis
+            var y = d3.scaleLinear()
+                .range([height, 0]);
+            var yAxis = svg.append("g")
+                .attr("class", "myYaxis")
+
+
+            // A function that create / update the plot for a given variable:
+            function update(data) {
+
+                // Update the X axis
+                x.domain(data.map(function(d) {
+                    return d.group;
+                }))
+                xAxis.call(d3.axisBottom(x))
+
+                // Update the Y axis
+                y.domain([0, d3.max(data, function(d) {
+                    return d.value
+                })]);
+                yAxis.transition().duration(1000).call(d3.axisLeft(y));
+
+                // Create the u variable
+                var u = svg.selectAll("rect")
+                    .data(data)
+
+                u
+                    .enter()
+                    .append("rect") // Add a new rect for each new elements
+                    .merge(u) // get the already existing elements as well
+                    .transition() // and apply changes to all of them
+                    .duration(1000)
+                    .attr("x", function(d) {
+                        return x(d.group);
+                    })
+                    .attr("y", function(d) {
+                        return y(d.value);
+                    })
+                    .attr("width", x.bandwidth())
+                    .attr("height", function(d) {
+                        return height - y(d.value);
+                    })
+                    .attr("fill", "black")
+
+                // If less group in the new dataset, I delete the ones not in use anymore
+                u
+                    .exit()
+                    .remove()
+            }
+            // Initialize the plot with the first dataset
+            update(data1)
+        </script>
+    </div>
+
+    <div id="footer">
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="about.html">Rights</a></li>
+            <li><a href="about.html">Help</a></li>
+            <li><a href="about.html">Contact Us</a></li>
+        </ul>
+        </br>
+        &copy; 2014 Loopinfinity.com. All Rights Reserved.
+    </div>
+
+</body>
+
+</html>
