@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+ <link rel="stylesheet" type="text/css" href="stylesheet2.css">
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+
+
+</head>
+<body>
+<div class="header">
+  <a href="crime.html" class="logo">Crime Analysis</a>
+  <div class="header-right">
+    <a href="about.html">Help</a>
+    <a href="about.html">Settings</a>
+  </div>
+</div>
+	
+	
+<ul>
+  <li><a href="crime.html">Home</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="about.html">Contact</a></li>
+  <li><a class="active" href="button.html">Case Studies</a></li>
+</ul>
+
+    <marquee scrolldelay="20">www.Loopinfinity.com www.Loopinfinity.com</marquee>
+
+<div id= "main">
+
+<h1>EAST STATE CRIME CASES FROM 2001-2012</h1>
+
+<button id="b" onclick="update(data1)">WEST BENGAL</button>
+<button id="b" onclick="update(data2)">BIHAR</button>
+<button id="b" onclick="update(data3)">CHATTISGARH</button>
+<button id="b" onclick="update(data4)">JHARKAND</button>
+<button id="b" onclick="update(data5)">MAHARASTRA</button></br>
+<button id="b" onclick="update(data6)">MADHYA PRADESH</button>
+<button id="b" onclick="update(data7)">NAGALAND</button>
+<button id="b" onclick="update(data8)">ODISHA</button>
+<button id="b" onclick="update(data9)">SIKKIM</button>
+<button id="b" onclick="update(data10)">TRIPURA</button></br>
+<button id="b"  onclick="update(data11)">ARUNACHAL PRADESH</button>
+<button id="b" onclick="update(data12)">ASSAM</button>
+<button id="b" onclick="update(data13)">MANIPUR</button>
+<button id="b" onclick="update(data14)">MEGHALAYA</button>
+<button id="b" onclick="update(data15)">MIZORAM</button>
+
+
+<!-- Create a div where the graph will take place -->
+<div id="my_dataviz"></div>
+
+<a class="button" href="east2.html">Next states</a>
+
+ <div id="footer">
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="about.html">Rights</a></li>
+            <li><a href="about.html">Help</a></li>
+            <li><a href="about.html">Contact Us</a></li>
+        </ul>
+        </br>
+        &copy; 2014 Loopinfinity.com. All Rights Reserved.
+    </div>
+
+
+<script>
+    // create 2 data_set
+    var data1 = [{
+        group: "rapes",
+        value: 41574
+    }, {
+        group: "murders",
+        value: 42082
+    }, {
+        group: "robbery",
+        value: 7354
+
+    }, {
+        group: "kidnapping",
+        value: 51998
+    }, {
+        group: "Bulglary",
+        value: 5500
+    }, {
+        group: "Cheating",
+        value: 30831
+    }, {
+        group: "Dowry death",
+        value: 5172
+    }, {
+        group: "Dacoity",
+        value: 13449
+    }, {
+        group: "Riots",
+        value: 51154
+    }, {
+        group: "thefts",
+        value: 380936
+
+    }];
+
+    var data2 = [{
+        group: "rapes",
+        value: 26248
+    }, {
+        group: "murders",
+        value: 85836
+    }, {
+        group: "robbery",
+        value: 23666
+    }, {
+        group: "kidnapping",
+        value: 74440
+
+    }, {
+        group: "bulgary",
+        value: 40293
+    }, {
+        group: "dacoity",
+        value: 12364
+    }, {
+        group: "thefts",
+        value: 306744
+    }, {
+        group: "riots",
+        value: 105096
+    }, {
+        group: "dowry deaths",
+        value: 13548
+    }];
+
+    var data3 = [{
+        group: "rapes",
+        value: 23676
+    }, {
+        group: "murders",
+        value: 20318
+    }, {
+        group: "robbery",
+        value: 5113
+
+    }, {
+        group: "bulgary",
+        value: 44656
+    }, {
+        group: "dacoity",
+        value: 1636
+    }, {
+        group: "riots",
+        value: 10897
+    }, {
+        group: "thefts",
+        value: 125746
+    }, {
+        group: "dowry deaths",
+        value: 1142
+    }, {
+        group: "cheating",
+        value: 6998
+
+    }];
+
+    var data4 = [{
+        group: "rapes",
+        value: 18318
+    }, {
+        group: "murders",
+        value: 32561
+    }, {
+        group: "robbery",
+        value: 8711
+    }, {
+        group: "kidnapping",
+        value: 16952
+    }, {
+        group: "bulgary",
+        value: 16680
+    }, {
+        group: "thefts",
+        value: 142644
+    }, {
+        group: "riots",
+        value: 28599
+    }, {
+        group: "cheating",
+        value: 9476
+    }, {
+        group: "dowry deaths",
+        value: 3291
+    }];
+    var data5 = [{
+        group: "rapes",
+        value: 72174
+    }, {
+        group: "murders",
+        value: 59691
+    }, {
+        group: "robbery",
+        value: 22314
+    }, {
+        group: "kidnapping",
+        value: 23916
+    }, {
+        group: "bulgary",
+        value: 137346
+    }, {
+        group: "thefts",
+        value: 527720
+    }, {
+        group: "riots",
+        value: 31124
+    }, {
+        group: "cheating",
+        value: 18495
+    }, {
+        group: "dowry deaths",
+        value: 9036
+    }];
+    var data6 = [{
+        group: "rapes",
+        value: 35972
+    }, {
+        group: "murders",
+        value: 54765
+    }, {
+        group: "robbery",
+        value: 37719
+    }, {
+        group: "kidnapping",
+        value: 30202
+    }, {
+        group: "bulgary",
+        value: 185617
+    }, {
+        group: "thefts",
+        value: 1113614
+    }, {
+        group: "riots",
+        value: 90244
+    }, {
+        group: "cheating",
+        value: 79902
+    }, {
+        group: "dowry deaths",
+        value: 4249
+    }];
+	    // create 2 data_set
+    var data7 = [{
+        group: "rapes",
+        value: 440
+    }, {
+        group: "murders",
+        value: 1603
+    }, {
+        group: "robbery",
+        value: 1042
+
+    }, {
+        group: "kidnapping",
+        value: 784
+    }, {
+        group: "Bulglary",
+        value: 1146
+    }, {
+        group: "Cheating",
+        value: 379
+    }, {
+        group: "Dowry death",
+        value: 0
+    }, {
+        group: "Dacoity",
+        value: 125
+    }, {
+        group: "Riots",
+        value: 65
+    }, {
+        group: "thefts",
+        value: 7604
+
+    }];
+
+    var data8 = [{
+        group: "rapes",
+        value: 21262
+    }, {
+        group: "murders",
+        value: 28397
+    }, {
+        group: "robbery",
+        value:  13707
+    }, {
+        group: "kidnapping",
+        value: 18176
+
+    }, {
+        group: "bulgary",
+        value: 33476
+    }, {
+        group: "dacoity",
+        value: 3827
+    }, {
+        group: "thefts",
+        value: 152188
+    }, {
+        group: "riots",
+        value: 19362
+    }, {
+        group: "dowry deaths",
+        value: 4221
+    }];
+
+    var data9 = [{
+        group: "rapes",
+        value: 390
+    }, {
+        group: "murders",
+        value: 315
+    }, {
+        group: "robbery",
+        value: 64
+
+    }, {
+        group: "bulgary",
+        value: 877
+    }, {
+        group: "dacoity",
+        value: 6
+    }, {
+        group: "riots",
+        value: 257
+    }, {
+        group: "thefts",
+        value: 2038
+    }, {
+        group: "dowry deaths",
+        value: 2
+    }, {
+        group: "cheating",
+        value: 350
+    } ];
+
+    var data10 = [{
+        group: "rapes",
+        value: 4116
+    }, {
+        group: "murders",
+        value: 2722
+    }, {
+        group: "robbery",
+        value: 777
+    }, {
+        group: "kidnapping",
+        value: 2886
+    }, {
+        group: "bulgary",
+        value: 2404
+    }, {
+        group: "thefts",
+        value: 9246
+    }, {
+        group: "riots",
+        value: 2025
+    }, {
+        group: "cheating",
+        value: 852
+    }, {
+        group: "dowry deaths",
+        value: 314
+    }];
+     
+	 
+	  var data11 = [{
+        group: "rapes",
+        value: 1000
+    }, {
+        group: "murders",
+        value: 1294
+    }, {
+        group: "robbery",
+        value: 843
+
+    }, {
+        group: "kidnapping",
+        value: 1714
+    }, {
+        group: "Bulglary",
+        value: 2780
+    }, {
+        group: "Cheating",
+        value: 520
+    }, {
+        group: "Dowry death",
+        value: 2
+    }, {
+        group: "Dacoity",
+        value: 264
+    }, {
+        group: "Riots",
+        value: 340
+    }, {
+        group: "thefts",
+        value: 10356
+
+    }];
+
+    var data12 = [{
+        group: "rapes",
+        value: 32356
+    }, {
+        group: "murders",
+        value: 21812
+    }, {
+        group: "robbery",
+        value: 7467
+    }, {
+        group: "kidnapping",
+        value: 55878
+
+    }, {
+        group: "bulgary",
+        value: 34752
+    }, {
+        group: "dacoity",
+        value: 4423
+    }, {
+        group: "thefts",
+        value: 170950
+    }, {
+        group: "riots",
+        value: 34963
+    }, {
+        group: "dowry deaths",
+        value: 1276
+    }];
+
+    var data13 = [{
+        group: "rapes",
+        value: 774
+    }, {
+        group: "murders",
+        value: 5533
+    }, {
+        group: "robbery",
+        value: 83
+
+    }, {
+        group: "bulgary",
+        value: 755
+    }, {
+        group: "dacoity",
+        value: 1169
+    }, {
+        group: "riots",
+        value: 851
+    }, {
+        group: "thefts",
+        value: 9668
+    }, {
+        group: "dowry deaths",
+        value: 2
+    }, {
+        group: "cheating",
+        value: 1231
+
+    }];
+
+    var data14 = [{
+        group: "rapes",
+        value: 2040
+    }, {
+        group: "murders",
+        value: 2415
+    }, {
+        group: "robbery",
+        value: 972
+    }, {
+        group: "kidnapping",
+        value: 1458
+    }, {
+        group: "bulgary",
+        value: 1888
+    }, {
+        group: "thefts",
+        value: 12008
+    }, {
+        group: "riots",
+        value: 147
+    }, {
+        group: "cheating",
+        value: 1015
+    }, {
+        group: "dowry deaths",
+        value: 15
+    }];
+    var data15 = [{
+        group: "rapes",
+        value: 1652
+    }, {
+        group: "murders",
+        value: 728
+    }, {
+        group: "robbery",
+        value: 114
+    }, {
+        group: "kidnapping",
+        value: 192
+    }, {
+        group: "bulgary",
+        value: 4748
+    }, {
+        group: "thefts",
+        value: 19606
+    }, {
+        group: "riots",
+        value: 48
+    }, {
+        group: "cheating",
+        value: 743
+    }, {
+        group: "dowry deaths",
+        value: 4
+    }];
+   
+
+    // set the dimensions and margins of the graph
+    var margin = {
+            top: 30,
+            right: 30,
+            bottom: 70,
+            left: 60
+        },
+        width = 600 - margin.left - margin.right,
+        height = 400 - margin.top - margin.bottom;
+
+    // append the svg object to the body of the page
+    var svg = d3.select("#my_dataviz")
+        .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform",
+            "translate(" + margin.left + "," + margin.top + ")");
+
+    // Initialize the X axis
+    var x = d3.scaleBand()
+        .range([0, width])
+        .padding(0.2);
+    var xAxis = svg.append("g")
+        .attr("transform", "translate(0," + height + ")")
+
+    // Initialize the Y axis
+    var y = d3.scaleLinear()
+        .range([height, 0]);
+    var yAxis = svg.append("g")
+        .attr("class", "myYaxis")
+
+    // A function that create / update the plot for a given variable:
+    function update(data) {
+
+        // Update the X axis
+        x.domain(data.map(function(d) {
+            return d.group;
+        }))
+        xAxis.call(d3.axisBottom(x))
+
+        // Update the Y axis
+        y.domain([0, d3.max(data, function(d) {
+            return d.value
+        })]);
+        yAxis.transition().duration(1000).call(d3.axisLeft(y));
+
+        // Create the u variable
+        var u = svg.selectAll("rect")
+            .data(data)
+
+        u
+            .enter()
+            .append("rect") // Add a new rect for each new elements
+            .merge(u) // get the already existing elements as well
+            .transition() // and apply changes to all of them
+            .duration(1000)
+            .attr("x", function(d) {
+                return x(d.group);
+            })
+            .attr("y", function(d) {
+                return y(d.value);
+            })
+            .attr("width", x.bandwidth())
+            .attr("height", function(d) {
+                return height - y(d.value);
+            })
+            .attr("fill", "black")
+
+        // If less group in the new dataset, I delete the ones not in use anymore
+        u
+            .exit()
+            .remove()
+    }
+
+    // Initialize the plot with the first dataset
+    update(data1)
+</script>
+</div>
+
+</body>
+
+</html>
