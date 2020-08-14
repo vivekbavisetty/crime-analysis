@@ -1,0 +1,193 @@
+<!Doctype html>
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CRIME ANALYSIS</title>
+    <link rel="icon" href="icon.jpg">
+
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+</head>
+
+<img src="https://www.bu.edu/online/files/2019/06/criminal-justice-concentrate-crime-analysis-masters-1130x350.jpg" alt="crime1">
+
+<body>
+    <div id="head">
+        <h1>CRIME ANALYSIS</h1>
+    </div>
+    </br>
+    </br>
+
+    <div id="marquee">
+        <marquee scrolldelay="20">www.Loopinfinity.com www.Loopinfinity.com</marquee>
+    </div>
+
+
+    <div id="nav">
+        <ul>
+            <li><a class="button" href="about.html">About</a></li>
+            <li><a class="button" href="button.html">Case studies</a></li>
+            <li><a class="button" href="about.html">Workshops</a></li>
+            <li><a class="button" href="about.html">help</a></li>
+        </ul>
+    </div>
+    </br>
+    </br>
+    </br>
+
+
+    <div id="real1">
+        <img src="https://www.bu.edu/met/files/2019/06/graduate-certificate-crime-analysis-550x250.jpg">
+        <p> Crime analysis is a law enforcement function that involves <br>systematic analysis for identifying and analyzing patterns and trends <br>in crime and disorder. Information on patterns can help law enforcement<br> agencies deploy resources in a
+            more effective manner, and assist detectives <br>in identifying and apprehending suspects.</p>
+    </div>
+    </br>
+    </br>
+    </br>
+
+
+    <div id="real2">
+        <img src="https://web.colby.edu/cogblog/files/2018/04/truth-and-lies.gif">
+        <p>True crime is a nonfiction literary, podcast,<br> and film genre in which the author examines an actual crime and details the<br> actions of real people. ... True crime comes in many forms, such as books, films,<br> podcasts, and television shows.
+        </p>
+    </div>
+    </br>
+    </br>
+    </br>
+
+
+    <div id="real3">
+        <img src="http://3.bp.blogspot.com/-yIK-fhZ3quA/TiNmm6_0N-I/AAAAAAAAAhQ/Ru6F8tjSWTw/s320/CrimeTriangle.png">
+        <p>The usage of guns is taken as sample, to inform us in the format of graph<br> in the above graph,it tells us the usage of guns accomplished<br> in england and wales </p>
+    </div>
+    </br>
+    </br>
+    </br>
+    </br>
+
+
+    <div id="real4">
+        <img src="https://i.gifer.com/Gsb5.gif">
+        <p>Bullets fired from guns have distinct markings,<br> as unique as fingerprints. Once the state lab has one bullet, all they need is a gun, a <br>test fire, and time to compare the two projectiles. Almost every bullet fired from <br>a gun, can be
+            traced back to that gun using a microscope</p>
+    </div>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    <div class="slideshow-container">
+
+        <div class="mySlides">
+            <q>the highest incidence of violent crimes accounting for 12.1% of total violent crimes in India (40,613 out of 3,305,901) followed by Maharashtra with 11.1% (30,290 out of 3,305,901). Among 35 mega cities, Delhi reported 31.2% (533 out of 1,706) of total rape cases.</q>
+            <p class="author">- Uttar Pradesh</p>
+        </div>
+
+        <div class="mySlides">
+            <q>Indore reported the highest crime rate (769.1) among the mega cities in India followed by Bhopal (719.5) and Jaipur (597.1).</q>
+            <p class="author">-In mega cities</p>
+        </div>
+
+        <div class="mySlides">
+            <q>The overall crime rate reduced by three per cent in Hyderabad city during 2019 with the number of cases registered during this year decreasing to 15,598 as against 16,084 cases reported in 2018," Hyderabad</q>
+            <p class="author">- Telangana-Hyderabad</p>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+
+    </div>
+
+    <div class="dot-container">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+
+
+    <div id="footer">
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="about.html">Rights</a></li>
+            <li><a href="about.html">Help</a></li>
+            <li><a href="about.html">Contact Us</a></li>
+        </ul>
+        </br>
+        &copy; 2014 Loopinfinity.com. All Rights Reserved.
+    </div>
+
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+
+
+</body>
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = slides.length
+        }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+
+
+
+    //Get the button
+    var mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+
+</html>
