@@ -1,0 +1,2 @@
+# crime-analysis
+Crime analysis is a law enforcement function that involves systematic analysis for identifying and analyzing patterns and trends in crime and disorder. *In our dataset we are  analysing the  different types of crimes like rape attempt,murder cases,kidnap cases,dacoity cases,robbery,burglary,theft,roits,cheating,arson,dowry. We are going to analyse that,which place is high and which place is low in crime rate. By this,Governament can take actions according to the highest crime rate  and people get to know about crime details.
