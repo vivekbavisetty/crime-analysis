@@ -1,0 +1,314 @@
+                        body {
+                            background-color: black;
+                            font-size: 15px;
+                            color: white;
+                        }
+                        
+                        #head {
+                            color: white;
+                            font-size: 20px;
+                            font-family: italic;
+                            text-align: center;
+                            border-radius: 10px;
+                            padding: 5px;
+                            background-color: blue;
+                            background: linear-gradient(red, black, red);
+                            text-shadow: 3px 3px 5px red;
+                            3px 3px 5px black;
+                        }
+                        
+                        #bg {
+                            font-size: 15px;
+                            color: white;
+                            width: max;
+                            height: max;
+                            /**background-color:white;**/
+                            margin-left: 0px;
+                            background-image: 9vnw.gif;
+                        }
+                        
+                        #marquee {
+                            color: blue;
+                            direction: left;
+                            height: 50;
+                            width: 1250;
+                        }
+                        /*******************************navigation*************************************/
+                        
+                        #nav {
+                            margin: 10px;
+                            height: 90px;
+                            border-radius: 5px;
+                            color: #efe5d0;
+                            text-align: center;
+                            padding: 15px;
+                            font-size: 90%;
+                        }
+                        
+                        #nav ul {
+                            list-style-type: none;
+                            text-align: center;
+                            margin: 10px;
+                            padding: 5px;
+                            border-radius: 5px;
+                        }
+                        
+                        #nav ul li {
+                            display: inline;
+                        }
+                        
+                        #nav ul li a {
+                            text-decoration: none;
+                            font-family: Arial;
+                            padding: 2em 1em;
+                            color: white;
+                            background-color: #000;
+                        }
+                        
+                        #nav ul li a:hover {
+                            color: black;
+                            background-color: white;
+                        }
+                        /***************reals*****************/
+                        
+                        #real1 {
+                            text-align: center;
+                        }
+                        
+                        #real2 {
+                            text-align: center;
+                            display: block;
+                        }
+                        
+                        #real3 {
+                            text-align: center;
+                            ;
+                        }
+                        
+                        #real4 {
+                            text-align: center;
+                        }
+                        /******************************footer**************************************************/
+                        
+                        #footer {
+                            margin: 10px;
+                            height: 90px;
+                            border-radius: 5px;
+                            color: green;
+                            text-align: center;
+                            padding: 15px;
+                            font-size: 90%;
+                        }
+                        
+                        #footer ul {
+                            list-style-type: none;
+                            text-align: center;
+                            margin: 10px;
+                            padding: 5px;
+                            border-radius: 5px;
+                        }
+                        
+                        #footer ul li {
+                            display: inline;
+                        }
+                        
+                        #footer ul li a {
+                            text-decoration: none;
+                            font-family: Arial;
+                            padding: 2em 1em;
+                            color: green;
+                        }
+                        
+                        #footer ul li a:hover {
+                            color: black;
+                            background-color: blue;
+                        }
+                        
+                        #message {
+                            float: right;
+                        }
+                        /******************************ids****************************/
+                        
+                        #image {
+                            float: right;
+                        }
+                        
+                        #button {
+                            float: right;
+                        }
+                        
+                        #myBtn {
+                            float: right;
+                        }
+                        /*******************************************About*************************************************************/
+                        
+                        #nav1 ul {
+                            list-style-type: none;
+                            margin: 10px;
+                            padding: 5px;
+                            border-radius: 5px;
+                        }
+                        
+                        #nav1 ul li {
+                            display: inline;
+                        }
+                        
+                        #nav1 ul li a {
+                            text-decoration: none;
+                            font-family: Arial;
+                            padding: 2em 1em;
+                            color: #fff;
+                            background-color"#000;
+
+                        }
+                        
+                        #nav1 ul li a:hover {
+                            color: #000;
+                            background-color: #fff;
+                        }
+                        /****************************phone***********************/
+                        
+                        #phone {
+                            width: 25px;
+                            height: 25px;
+                        }
+                        
+                        #about1 {
+                            margin: 10px;
+                            height: 90px;
+                            border-radius: 5px;
+                            color: #efe5d0;
+                            text-align: center;
+                            padding: 15px;
+                            font-size: 90%;
+                            background-image: 9vnw.gif;
+                        }
+                        
+                        #about1 ul {
+                            list-style-type: none;
+                            margin: 10px;
+                            padding: 5px;
+                            border-radius: 5px;
+                        }
+                        
+                        #about1 ul li {
+                            display: inline;
+                        }
+                        
+                        #about1 ul li a {
+                            text-decoration: none;
+                            font-family: Arial;
+                            padding: 2em 1em;
+                            color: white;
+                            background-color: #000;
+                        }
+                        
+                        #about1 ul li a:hover {
+                            color: green;
+                            background-color: white;
+                        }
+                        /****************create************************/
+                        
+                        #create {
+                            width: 1200px;
+                            padding-top: 5px;
+                            border-style: solid;
+                            border-color: #336699;
+                            border-width: 5px;
+                            padding-left: 5px;
+                            padding-bottom: 10px;
+                            margin-left: 5px;
+                        }
+                        /***********************auto****************************/
+                        
+                        #auto {
+                            float: right;
+                        }
+                        /***********************************************slide*******************************************/
+                        
+                        * {
+                            box-sizing: border-box
+                        }
+                        
+                        body {
+                            font-family: Verdana, sans-serif;
+                            margin: 0
+                        }
+                        /* Slideshow container */
+                        
+                        .slideshow-container {
+                            position: relative;
+                            background: black;
+                        }
+                        /* Slides */
+                        
+                        .mySlides {
+                            display: none;
+                            padding: 80px;
+                            text-align: center;
+                        }
+                        /* Next & previous buttons */
+                        
+                        .prev,
+                        .next {
+                            cursor: pointer;
+                            position: absolute;
+                            top: 50%;
+                            width: auto;
+                            margin-top: -30px;
+                            padding: 16px;
+                            color: #888;
+                            font-weight: bold;
+                            font-size: 20px;
+                            border-radius: 0 3px 3px 0;
+                            user-select: none;
+                        }
+                        /* Position the "next button" to the right */
+                        
+                        .next {
+                            position: absolute;
+                            right: 0;
+                            border-radius: 3px 0 0 3px;
+                        }
+                        /* On hover, add a black background color with a little bit see-through */
+                        
+                        .prev:hover,
+                        .next:hover {
+                            background-color: black;
+                            color: white;
+                        }
+                        /* The dot/bullet/indicator container */
+                        
+                        .dot-container {
+                            text-align: center;
+                            padding: 20px;
+                            background: black;
+                        }
+                        /* The dots/bullets/indicators */
+                        
+                        .dot {
+                            cursor: pointer;
+                            height: 15px;
+                            width: 15px;
+                            margin: 0 2px;
+                            background-color: #bbb;
+                            border-radius: 50%;
+                            display: inline-block;
+                            /*transition: background-color 0.6s ease;*/
+                        }
+                        /* Add a background color to the active dot/circle */
+                        
+                        .active,
+                        .dot:hover {
+                            background-color: #717171;
+                        }
+                        /* Add an italic font style to all quotes */
+                        
+                        q {
+                            font-style: italic;
+                        }
+                        /* Add a blue color to the author */
+                        
+                        .author {
+                            color: cornflowerblue;
+                        }
